@@ -30,6 +30,7 @@ services:
     restart: unless-stopped
     environment:
       discovery.type: single-node
+      ELASTIC_PASSWORD: elastic
     ports:
       - "9200:9200"
     volumes:
