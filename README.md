@@ -74,7 +74,7 @@ This solution provides a Scalable and Efficient implementation for log ingestion
   ```sh
   docker compose up -d
   ```
-- You can check if all the services (ElasticSearch, Zookeeper, Kafka) are up and running by
+- You can check if all the services (ElasticSearch, Kafka) are up and running by
   ```sh
   docker ps
   ```
