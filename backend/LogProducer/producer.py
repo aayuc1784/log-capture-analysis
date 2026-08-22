@@ -21,7 +21,6 @@ args = parser.parse_args()
 
 producer = KafkaProducer(
     bootstrap_servers=["localhost:9094"],
-    value_serializer=lambda v: json.dumps(v).encode("utf-8")
 )
 
 topic=args.topic
@@ -36,7 +35,7 @@ with open(file_path, "r") as file:
     data = json.load(file)
     for json_data in data:
         message = json.dumps(json_data)
-        producer.send(topic, message)
+        producer.send(topic, message.encode("utf-8"))
         producer.flush()
         print(f"Produced ({topic}): {message}\n")
         time.sleep(LOGS_TIME_INTERVAL)
