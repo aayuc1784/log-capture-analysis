@@ -30,7 +30,7 @@
 ## About The Project
 
 This solution provides a Scalable and Efficient implementation for log ingestion and analysis, leveraging the Light-weight multithreading power of Golang and search-indexing capability of ElasticSearch for effective log ingestion, storage, and analysis. It is capable of accepting logs from two distinct sources: a Kafka queue(that moves down to taking logs from various different Services) or direct HTTP API requests. It also offers a web-based user interface for log analysis, supporting various filters and search queries including regex.
-![Architecture](https://github.com/aayuc1784/log-capture-analysis/blob/main/frontend/public/images/architecture.png)
+![Architecture](https://github.com/aayuc1784/log-capture-analysis/blob/main/frontend/public/image/architecture.png)
 
 ### Features
 
@@ -81,9 +81,9 @@ This solution provides a Scalable and Efficient implementation for log ingestion
 
 - Setup Log ingestion server
 
-    1. Go to `log-server` directory
+    1. Go to `backend` directory
        ```sh
-         cd log-server/
+         cd backend/
        ```
     2. Install golang dependencies
        ```sh
@@ -103,7 +103,7 @@ This solution provides a Scalable and Efficient implementation for log ingestion
        The server should now be up and running on [http://localhost:3000](http://localhost:3000).
 
     5. This script is like a stress test, for a simultaneous bulk log insertion, the current value is 500, but can be modified as per requirements.
-       Configure `LOGS_LENGTH` in `log-server/tests/performance_test.py`.
+       Configure `LOGS_LENGTH` in `backend/tests/performance_test.py`.
 
        ```sh
        python tests/performance_test.py
@@ -130,9 +130,9 @@ This solution provides a Scalable and Efficient implementation for log ingestion
     1.  Assuming all the services are up and running.
 
     3.  Start publisher script.
-        Go to `log-producers`
+        Go to `LogProducer`
         ```sh
-        cd log-server/log-producers
+        cd backend/LogProducer
         ```
         Start a producer to simulate service using `--topic` option in different shells.
         Configured topics: `auth`,`database`,`email`,`payment`,`server`,`services`, for example
