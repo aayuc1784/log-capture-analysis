@@ -49,7 +49,7 @@ func setUpRoutes(ingestionContext *IngestionContext) *gin.Engine{
 
     router.GET("/logs-count", func (c *gin.Context) { CountLogs(c, ingestionContext)})
 
-    router.POST("/search-logs")
+    router.POST("/search-logs", func (c *gin.Context) { SearchLogs(c, ingestionContext) })
 
     return router
 }
